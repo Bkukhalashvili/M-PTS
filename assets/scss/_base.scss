@@ -1,0 +1,59 @@
+// primary
+$color-primary: #8338ec;
+$color-primary-deactivated: #b588f4;
+$grey-shades-headlines: #212529;
+$color-subHeadline: #343a40;
+$color-subHeadline-deactivated: #adb5bd;
+$grey-shades-blackish: #0d0f10;
+
+// form
+$color-tas-details: #474747; // task details
+$color-placeholder: #898989; //form placeholder
+$color-validation: #6c757d; //form validation
+
+// modal
+$color-modal-close-icon: #dee2e6; //modal close icon
+
+// Progress Tracking
+
+$color-begin: #f7bc30; // to begin
+$color-progress: #fb5607; // in progress
+$color-testing: #ff006e; // ready for testing
+$color-completed: #3a86ff; // completed
+
+// department colors
+
+$color-design: #ff66a8; // design
+$color-marketing: #fd9a6a; // marketing
+$color-logistic: #89b6ff; // Logistic
+$color-infTech: #ffd86d; // infTech
+
+// statuses
+
+$color-status-high: #fa4d4d; // high status
+$color-status-medium: #ffbe0b; // medium status
+$color-status-low: #08a508; // low status
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+  font-family: "FiraGO", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
