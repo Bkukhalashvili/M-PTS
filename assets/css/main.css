@@ -24,7 +24,6 @@ body {
   width: 192rem;
   height: 108rem;
   margin: 0 auto;
-  background-color: red;
 }
 
 .header {
@@ -189,4 +188,76 @@ body {
 
 .modal-btn--top-icon {
   width: 4rem;
+}
+
+.task-control {
+  padding: 0 12rem;
+  margin-top: 6rem;
+  width: 100%;
+}
+.task-control__title {
+  font-size: 3.4rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.dropdown-container {
+  display: flex;
+  gap: 4.5rem;
+  border: 1px solid #343a40;
+  border-radius: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 5rem;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown .dropdown-btn {
+  background: transparent;
+  color: #343a40;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 1.8rem;
+  font-family: inherit;
+}
+.dropdown .dropdown-btn__icon {
+  padding-left: 0.8rem;
+}
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 1rem;
+  width: 688px;
+  padding: 4rem 3rem 2rem 3rem;
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+.dropdown label {
+  display: block;
+  margin-bottom: 5px;
+}
+.dropdown .container-apply {
+  display: flex;
+  justify-content: end;
+}
+.dropdown .apply-btn {
+  width: 15.5rem;
+  margin-top: 2.5rem;
+  padding: 0.8rem 2rem;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  background-color: #8338ec;
+  font-size: 1.6rem;
+  cursor: pointer;
+  font-family: inherit;
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://free.bboxtype.com/embedfonts/?family=FiraGO:200,300,400,500"
+      href="https://free.bboxtype.com/embedfonts/?family=FiraGO:200,300,400,500,600"
       rel="stylesheet"
     />
 
@@ -39,8 +39,72 @@
           </ul>
         </nav>
       </header>
-      <h1>Hello World!</h1>
+
+
+
+      <section class="task-control">
+        <p class="task-control__title">დავალებების გვერდი</p>
+
+        <div class="dropdown-container">
+
+          <div class="dropdown">
+            <button class="dropdown-btn">
+              დეპარტამენტი 
+              <img class="dropdown-btn__icon" src="../src/img/down-icon.svg" alt="" />
+            </button>
+            <div class="dropdown-content">
+              <label><input type="checkbox"> მარკეტინგის დეპარტამენტი</label>
+              <label><input type="checkbox"> დიზაინის დეპარტამენტი</label>
+              <label><input type="checkbox"> ლოჯისტიკის დეპარტამენტი</label>
+              <label><input type="checkbox"> IT დეპარტამენტი</label>
+
+              <div class="container-apply">
+                <button class="apply-btn">არჩევა</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="dropdown">
+            <button class="dropdown-btn">
+              პრიორიტეტი 
+              <img class="dropdown-btn__icon" src="../src/img/down-icon.svg" alt="" />
+            </button>
+            <div class="dropdown-content">
+              <label><input type="checkbox"> დაბალი</label>
+              <label><input type="checkbox"> საშუალო</label>
+              <label><input type="checkbox"> მაღალი</label>
+
+              <div class="container-apply">
+                <button class="apply-btn">არჩევა</button>
+              </div>
+
+          </div>
+        </div>
+
+
+        <div class="dropdown">
+          <button class="dropdown-btn">
+            თანამშრომელი
+            <img class="dropdown-btn__icon" src="../src/img/down-icon.svg" alt="" />
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox"> ელეია</label>
+            <label><input type="checkbox"> გიორგი</label>
+            <label><input type="checkbox"> მარიამი</label>
+            <label><input type="checkbox"> ნიკა</label>
+
+            <div class="container-apply">
+              <button class="apply-btn">არჩევა</button>
+            </div>
+
+        </div>
+      </div>
+      </section>
+
     </div>
+
+    
 
     <!-- Modal Structure -->
     <div class="modal-overlay">

@@ -28,3 +28,37 @@ modalOverlay.addEventListener("click", (event) => {
     console.log("clicked");
   }
 });
+
+// filter
+
+document.querySelectorAll(".dropdown-btn").forEach((button) => {
+  button.addEventListener("click", function (e) {
+    e.stopPropagation(); // Prevents closing when clicking inside dropdown
+
+    // Close all other dropdowns first
+    document.querySelectorAll(".dropdown-content").forEach((content) => {
+      if (content !== this.nextElementSibling) {
+        content.style.display = "none";
+      }
+    });
+
+    // Toggle the current dropdown
+    let dropdown = this.nextElementSibling;
+    dropdown.style.display =
+      dropdown.style.display === "block" ? "none" : "block";
+  });
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function () {
+  document.querySelectorAll(".dropdown-content").forEach((content) => {
+    content.style.display = "none";
+  });
+});
+
+// Prevent dropdown from closing when clicking inside ((
+document.querySelectorAll(".dropdown-content").forEach((content) => {
+  content.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevents closing when clicking inside dropdown
+  });
+});

@@ -1,0 +1,80 @@
+.task-control {
+  padding: 0 12rem;
+  margin-top: 6rem;
+
+  // background-color: blue;
+  width: 100%;
+  &__title {
+    font-size: 3.4rem;
+    font-weight: 600;
+    color: $color-headline;
+  }
+}
+// dropdown
+
+.dropdown-container {
+  display: flex;
+  gap: 4.5rem;
+  border: 1px solid $color-subHeadline;
+  border-radius: 1rem;
+  width: fit-content;
+  margin-top: 5rem;
+}
+
+.dropdown {
+  position: relative;
+
+  .dropdown-btn {
+    background: transparent;
+    color: $color-subHeadline;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+
+    padding: 1rem 1.8rem;
+    font-family: inherit;
+
+    &__icon {
+      padding-left: 0.8rem;
+    }
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 1rem;
+    width: 688px;
+    padding: 4rem 3rem 2rem 3rem;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .container-apply {
+    display: flex;
+    justify-content: end;
+  }
+
+  .apply-btn {
+    width: 15.5rem;
+    margin-top: 2.5rem;
+    padding: 0.8rem 2rem;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    background-color: $color-primary;
+    font-size: 1.6rem;
+    cursor: pointer;
+    font-family: inherit;
+  }
+}
