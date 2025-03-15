@@ -1,0 +1,131 @@
+.task-tracker {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0 12rem;
+  margin-top: 6rem;
+
+  // &__column {
+  //   border-radius: 1rem;
+  // }
+
+  &__title {
+    font-size: 2rem;
+    // color: aliceblue;
+    color: white;
+    font-weight: 500;
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+}
+
+.to-do {
+  &__title {
+    background-color: $color-begin;
+    border-radius: 1rem;
+  }
+}
+
+.progress {
+  &__title {
+    background-color: $color-progress;
+    border-radius: 1rem;
+  }
+}
+
+.ready {
+  &__title {
+    background-color: $color-testing;
+    border-radius: 1rem;
+  }
+}
+
+.completed {
+  &__title {
+    background-color: $color-completed;
+    border-radius: 1rem;
+  }
+}
+
+.card {
+  background-color: aliceblue;
+  width: 381px;
+  height: 217;
+  border: 1px solid $color-begin;
+  border-radius: 1.5rem;
+  padding: 2rem;
+
+  margin-top: 1rem;
+
+  &__info {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    gap: 1rem;
+
+    margin-bottom: 2.8rem;
+
+    &__priority {
+      display: flex;
+      // width: 86px;
+      gap: 4px;
+      padding: 0.4rem;
+      border: 1px solid $color-begin;
+      border-radius: 4px;
+      font-weight: 500;
+      color: $color-begin;
+      font-size: 1.2rem;
+      // font-family: "FiraGO", sans-serif;
+    }
+
+    &__department {
+      // font-weight: 500;
+      font-size: 1.2rem;
+      background-color: $color-design;
+      padding: 5px 9px;
+      border-radius: 1.5rem;
+      color: white;
+      width: 88px;
+      text-align: center;
+    }
+
+    &__date {
+      margin-left: auto;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__description {
+    margin-bottom: 2.8rem;
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: $color-headline;
+      // background-color: red;
+      margin-bottom: 1.2rem;
+    }
+
+    &__content {
+      font-size: 1.4rem;
+      color: $color-subHeadline;
+    }
+  }
+
+  &__employee {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__img {
+      width: 31px;
+      height: 31px;
+      border-radius: 50%;
+    }
+  }
+
+  &__comments {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}

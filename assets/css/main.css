@@ -261,3 +261,105 @@ body {
   cursor: pointer;
   font-family: inherit;
 }
+
+.task-tracker {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0 12rem;
+  margin-top: 6rem;
+}
+.task-tracker__title {
+  font-size: 2rem;
+  color: white;
+  font-weight: 500;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.to-do__title {
+  background-color: #f7bc30;
+  border-radius: 1rem;
+}
+
+.progress__title {
+  background-color: #fb5607;
+  border-radius: 1rem;
+}
+
+.ready__title {
+  background-color: #ff006e;
+  border-radius: 1rem;
+}
+
+.completed__title {
+  background-color: #3a86ff;
+  border-radius: 1rem;
+}
+
+.card {
+  background-color: aliceblue;
+  width: 381px;
+  height: 217;
+  border: 1px solid #f7bc30;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+.card__info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.8rem;
+}
+.card__info__priority {
+  display: flex;
+  gap: 4px;
+  padding: 0.4rem;
+  border: 1px solid #f7bc30;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #f7bc30;
+  font-size: 1.2rem;
+}
+.card__info__department {
+  font-size: 1.2rem;
+  background-color: #ff66a8;
+  padding: 5px 9px;
+  border-radius: 1.5rem;
+  color: white;
+  width: 88px;
+  text-align: center;
+}
+.card__info__date {
+  margin-left: auto;
+  font-size: 1.2rem;
+}
+.card__description {
+  margin-bottom: 2.8rem;
+}
+.card__description__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #212529;
+  margin-bottom: 1.2rem;
+}
+.card__description__content {
+  font-size: 1.4rem;
+  color: #343a40;
+}
+.card__employee {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__employee__img {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+}
+.card__comments {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
