@@ -1,7 +1,7 @@
 // primary
 $color-primary: #8338ec;
 $color-primary-deactivated: #b588f4;
-$grey-shades-headlines: #212529;
+$color-headline: #212529;
 $color-subHeadline: #343a40;
 $color-subHeadline-deactivated: #adb5bd;
 $grey-shades-blackish: #0d0f10;
@@ -56,4 +56,11 @@ body {
   font-family: "FiraGO", sans-serif;
   font-weight: 400;
   line-height: 1.6;
+}
+
+.container {
+  width: 192rem;
+  height: 108rem;
+  margin: 0 auto;
+  background-color: red;
 }

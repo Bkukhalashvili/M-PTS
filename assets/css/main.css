@@ -19,3 +19,55 @@ body {
   font-weight: 400;
   line-height: 1.6;
 }
+
+.container {
+  width: 192rem;
+  height: 108rem;
+  margin: 0 auto;
+  background-color: red;
+}
+
+.header {
+  background-color: bisque;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 12rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav__btn {
+  height: 40px;
+  gap: 0.4rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  padding: 1rem 2rem;
+  border: none;
+  background-color: #8338ec;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav__btn--add-emp {
+  background-color: transparent;
+  border: solid 1px #8338ec;
+  color: #212529;
+}
+.nav__btn--add-task {
+  display: flex;
+  align-items: center;
+  width: 26.8rem;
+}
+.nav__icon {
+  height: 2rem;
+  width: 2rem;
+}

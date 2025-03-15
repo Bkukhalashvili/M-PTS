@@ -1,0 +1,56 @@
+.header {
+  background-color: bisque;
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+  padding: 3rem 12rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  &__btn {
+    // display: inline-flex;
+    // display: flex;
+    // align-items: center;
+    // display: inline-block;
+    height: 40px;
+    gap: 0.4rem;
+    font-size: 1.6rem;
+    font-family: inherit;
+    padding: 1rem 2rem;
+    border: none;
+    background-color: $color-primary;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &--add-emp {
+      background-color: transparent;
+      border: solid 1px $color-primary;
+      color: $color-headline;
+      // width: 22.5rem;'
+    }
+
+    &--add-task {
+      display: flex;
+      align-items: center;
+      width: 26.8rem;
+      // text-align: center;
+    }
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+  }
+}
