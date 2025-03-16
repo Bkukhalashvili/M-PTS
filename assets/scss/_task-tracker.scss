@@ -106,12 +106,34 @@
     &__department {
       // font-weight: 500;
       font-size: 1.2rem;
-      background-color: $color-design;
+      // background-color: $color-design;
       padding: 5px 9px;
       border-radius: 1.5rem;
       color: white;
       width: auto;
       text-align: center;
+
+      &--1 {
+        background-color: $color-department-1;
+      }
+      &--2 {
+        background-color: $color-department-2;
+      }
+      &--3 {
+        background-color: $color-department-3;
+      }
+      &--4 {
+        background-color: $color-department-4;
+      }
+      &--5 {
+        background-color: $color-department-5;
+      }
+      &--6 {
+        background-color: $color-department-6;
+      }
+      &--7 {
+        background-color: $color-department-7;
+      }
     }
 
     &__date {

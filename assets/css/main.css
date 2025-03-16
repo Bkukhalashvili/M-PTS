@@ -344,12 +344,32 @@ body {
 }
 .card__info__department {
   font-size: 1.2rem;
-  background-color: #ff66a8;
   padding: 5px 9px;
   border-radius: 1.5rem;
   color: white;
   width: auto;
   text-align: center;
+}
+.card__info__department--1 {
+  background-color: #6fa3d3;
+}
+.card__info__department--2 {
+  background-color: #ff66a8;
+}
+.card__info__department--3 {
+  background-color: #3cb371;
+}
+.card__info__department--4 {
+  background-color: #fd9a6a;
+}
+.card__info__department--5 {
+  background-color: #9b59b6;
+}
+.card__info__department--6 {
+  background-color: #ffd86d;
+}
+.card__info__department--7 {
+  background-color: #f79c42;
 }
 .card__info__date {
   margin-left: auto;

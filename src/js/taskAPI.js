@@ -17,6 +17,22 @@ async function fetchTasks() {
     // dynamic html for cards
 
     data.forEach((item) => {
+      // departments
+      const departmentNames = {
+        1: "ადმინისტრაცია",
+        2: "ადამიანური რესურსები",
+        3: "ფინანსები",
+        4: "მარკეტინგი",
+        5: "ლოჯისტიკა",
+        6: "ინფ.ტექ",
+        7: "მედია",
+      };
+
+      const department = item.department.id;
+
+      const departmentName =
+        departmentNames[department] || "Invalid department";
+
       // which column should task go
       const statusMessages = {
         1: toDoEL,
@@ -40,9 +56,11 @@ async function fetchTasks() {
                   </p>
                 </div>
 
-                <div class="card__info__department">
+                <div class="card__info__department card__info__department--${
+                  item.department.id
+                }">
                   <p class="department-text">
-                  ${item.department.name}
+                  ${departmentName}
 
                   </p>
                 </div>
