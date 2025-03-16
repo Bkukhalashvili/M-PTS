@@ -14,7 +14,10 @@ async function fetchTasks() {
     });
     const data = await response.json();
 
+    // dynamic html for cards
+
     data.forEach((item) => {
+      // which column should task go
       const statusMessages = {
         1: toDoEL,
         2: progressEl,
@@ -26,54 +29,56 @@ async function fetchTasks() {
       const statusMessage = statusMessages[status] || "Invalid status";
 
       statusMessage.innerHTML += `
-            <div class="card">
-            <div class="card__info">
-              <div class="card__info__priority">
-                <img class="priority__icon" src="${item.priority.icon}"" />
-                <p class="priority-text">
-                ${item.priority.name}
+              <div class="card">
+              <div class="card__info">
+                <div class="card__info__priority card__info__priority--${
+                  item.priority.id
+                }">
+                  <img class="priority__icon" src="${item.priority.icon}"" />
+                  <p class="priority-text">
+                  ${item.priority.name}
+                  </p>
+                </div>
+
+                <div class="card__info__department">
+                  <p class="department-text">
+                  ${item.department.name}
+
+                  </p>
+                </div>
+
+                <div class="card__info__date">
+                  <p class="card-date">
+                  ${item.due_date.split("T")[0]}
+                  </p>
+                </div>
+              </div>
+              <div class="card__description">
+                <p class="card__description__title">
+                ${item.name}
+                </p>
+                <p class="card__description__content">
+                ${item.description}
                 </p>
               </div>
+              <div class="card__employee">
+                <!-- <div class="card__employee_"> -->
+                  <img class="card__employee__img" src="${
+                    item.employee.avatar
+                  }" alt="" />
 
-              <div class="card__info__department">
-                <p class="department-text">
-                ${item.department.name}
+                <!-- </div> -->
+                <div class="card__comments">
+                  <img class="card__comments__icon" src="../src/img/comments-icon.svg" alt="" />
+                  <p class="card__comment__num"> 8</p>
 
-                </p>
-              </div>
-
-              <div class="card__info__date">
-                <p class="card-date">
-                ${item.due_date.split("T")[0]}
-                </p>
-              </div>
-            </div>
-            <div class="card__description">
-              <p class="card__description__title">
-              ${item.name}
-              </p>
-              <p class="card__description__content">
-              ${item.description}
-              </p>
-            </div>
-            <div class="card__employee">
-              <!-- <div class="card__employee_"> -->
-                <img class="card__employee__img" url="${
-                  item.employee.avatar
-                }" alt="" />
-
-              <!-- </div> -->
-              <div class="card__comments">
-                <img class="card__comments__icon" src="../src/img/comments-icon.svg" alt="" />
-                <p class="card__comment__num"> 8</p>
-
+                </div>
               </div>
             </div>
-          </div>
-      `;
+        `;
     });
 
-    console.log("Fetched Data:", data);
+    // console.log("Fetched Data:", data);
   } catch (error) {
     console.error("Error:", error);
   }

@@ -316,11 +316,19 @@ body {
   display: flex;
   gap: 4px;
   padding: 0.4rem;
-  border: 1px solid #f7bc30;
+  border: 1px solid;
   border-radius: 4px;
   font-weight: 500;
-  color: #f7bc30;
   font-size: 1.2rem;
+}
+.card__info__priority--1 {
+  color: #08a508;
+}
+.card__info__priority--2 {
+  color: #ffbe0b;
+}
+.card__info__priority--3 {
+  color: #fa4d4d;
 }
 .card__info__department {
   font-size: 1.2rem;

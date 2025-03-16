@@ -70,12 +70,24 @@
       // width: 86px;
       gap: 4px;
       padding: 0.4rem;
-      border: 1px solid $color-begin;
+      border: 1px solid;
       border-radius: 4px;
       font-weight: 500;
-      color: $color-begin;
+      // color: red;
       font-size: 1.2rem;
       // font-family: "FiraGO", sans-serif;
+
+      &--1 {
+        color: $color-priority-1;
+      }
+
+      &--2 {
+        color: $color-priority-2;
+      }
+
+      &--3 {
+        color: $color-priority-3;
+      }
     }
 
     &__department {
