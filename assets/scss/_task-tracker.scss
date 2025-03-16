@@ -21,28 +21,28 @@
 
 .to-do {
   &__title {
-    background-color: $color-begin;
+    background-color: $color-status-1;
     border-radius: 1rem;
   }
 }
 
 .progress {
   &__title {
-    background-color: $color-progress;
+    background-color: $color-status-2;
     border-radius: 1rem;
   }
 }
 
 .ready {
   &__title {
-    background-color: $color-testing;
+    background-color: $color-status-3;
     border-radius: 1rem;
   }
 }
 
 .completed {
   &__title {
-    background-color: $color-completed;
+    background-color: $color-status-4;
     border-radius: 1rem;
   }
 }
@@ -51,11 +51,24 @@
   background-color: aliceblue;
   width: 381px;
   height: 217;
-  border: 1px solid $color-begin;
+  border: 1px solid;
   border-radius: 1.5rem;
   padding: 2rem;
 
   margin-top: 1rem;
+
+  &__status--1 {
+    border-color: $color-status-1;
+  }
+  &__status--2 {
+    border-color: $color-status-2;
+  }
+  &__status--3 {
+    border-color: $color-status-3;
+  }
+  &__status--4 {
+    border-color: $color-status-4;
+  }
 
   &__info {
     display: flex;

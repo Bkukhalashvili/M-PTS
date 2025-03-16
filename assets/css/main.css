@@ -301,10 +301,22 @@ body {
   background-color: aliceblue;
   width: 381px;
   height: 217;
-  border: 1px solid #f7bc30;
+  border: 1px solid;
   border-radius: 1.5rem;
   padding: 2rem;
   margin-top: 1rem;
+}
+.card__status--1 {
+  border-color: #f7bc30;
+}
+.card__status--2 {
+  border-color: #fb5607;
+}
+.card__status--3 {
+  border-color: #ff006e;
+}
+.card__status--4 {
+  border-color: #3a86ff;
 }
 .card__info {
   display: flex;

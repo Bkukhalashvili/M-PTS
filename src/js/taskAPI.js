@@ -29,7 +29,7 @@ async function fetchTasks() {
       const statusMessage = statusMessages[status] || "Invalid status";
 
       statusMessage.innerHTML += `
-              <div class="card">
+              <div class="card card__status--${item.status.id}">
               <div class="card__info">
                 <div class="card__info__priority card__info__priority--${
                   item.priority.id
