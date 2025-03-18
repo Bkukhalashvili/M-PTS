@@ -190,6 +190,12 @@ body {
   width: 4rem;
 }
 
+/* errors and succes on form */
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
 .task-control {
   padding: 0 12rem;
   margin-top: 6rem;

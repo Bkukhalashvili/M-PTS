@@ -3,10 +3,26 @@ const modalOverlay = document.querySelector(".modal-overlay");
 const openModalBtn = document.querySelector(".nav__btn");
 // const closeModalBtn = document.querySelector(".modal-btn--cancel");
 const closeModalBtn = document.querySelectorAll(".modal-btn--cancel");
+const departmentDropDown = document.getElementById("departments");
 
-// Open modal on button click
+import { validationForModal } from "./validation.js"; //testing
+import { fetchDepartment } from "./taskAPI.js"; //testing
+import { dynamicDropDown } from "./taskAPI.js"; //testing
+
+// Open modal on button click and fetch & display departments data
 openModalBtn.addEventListener("click", () => {
   modalOverlay.style.display = "flex"; // Show the modal
+  validationForModal();
+
+  async function initialize() {
+    const departmentData = await fetchDepartment(); // Wait for data to be fetched
+    if (departmentData) {
+      for (let i = 0; i < departmentData.length; i++) {
+        dynamicDropDown(departmentData, departmentDropDown);
+      }
+    }
+  }
+  initialize();
 });
 
 // Close modal on button click

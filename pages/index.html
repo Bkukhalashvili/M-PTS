@@ -40,23 +40,24 @@
         </nav>
       </header>
 
-
-
       <section class="task-control">
         <p class="task-control__title">დავალებების გვერდი</p>
 
         <div class="dropdown-container">
-
           <div class="dropdown">
             <button class="dropdown-btn">
-              დეპარტამენტი 
-              <img class="dropdown-btn__icon" src="../src/img/down-icon.svg" alt="" />
+              დეპარტამენტი
+              <img
+                class="dropdown-btn__icon"
+                src="../src/img/down-icon.svg"
+                alt=""
+              />
             </button>
             <div class="dropdown-content">
-              <label><input type="checkbox"> მარკეტინგის დეპარტამენტი</label>
-              <label><input type="checkbox"> დიზაინის დეპარტამენტი</label>
-              <label><input type="checkbox"> ლოჯისტიკის დეპარტამენტი</label>
-              <label><input type="checkbox"> IT დეპარტამენტი</label>
+              <label><input type="checkbox" /> მარკეტინგის დეპარტამენტი</label>
+              <label><input type="checkbox" /> დიზაინის დეპარტამენტი</label>
+              <label><input type="checkbox" /> ლოჯისტიკის დეპარტამენტი</label>
+              <label><input type="checkbox" /> IT დეპარტამენტი</label>
 
               <div class="container-apply">
                 <button class="apply-btn">არჩევა</button>
@@ -64,48 +65,53 @@
             </div>
           </div>
 
-
           <div class="dropdown">
             <button class="dropdown-btn">
-              პრიორიტეტი 
-              <img class="dropdown-btn__icon" src="../src/img/down-icon.svg" alt="" />
+              პრიორიტეტი
+              <img
+                class="dropdown-btn__icon"
+                src="../src/img/down-icon.svg"
+                alt=""
+              />
             </button>
             <div class="dropdown-content">
-              <label><input type="checkbox"> დაბალი</label>
-              <label><input type="checkbox"> საშუალო</label>
-              <label><input type="checkbox"> მაღალი</label>
+              <label><input type="checkbox" /> დაბალი</label>
+              <label><input type="checkbox" /> საშუალო</label>
+              <label><input type="checkbox" /> მაღალი</label>
 
               <div class="container-apply">
                 <button class="apply-btn">არჩევა</button>
               </div>
+            </div>
+          </div>
 
+          <div class="dropdown">
+            <button class="dropdown-btn">
+              თანამშრომელი
+              <img
+                class="dropdown-btn__icon"
+                src="../src/img/down-icon.svg"
+                alt=""
+              />
+            </button>
+            <div class="dropdown-content">
+              <label><input type="checkbox" /> ელეია</label>
+              <label><input type="checkbox" /> გიორგი</label>
+              <label><input type="checkbox" /> მარიამი</label>
+              <label><input type="checkbox" /> ნიკა</label>
+
+              <div class="container-apply">
+                <button class="apply-btn">არჩევა</button>
+              </div>
+            </div>
           </div>
         </div>
-
-
-        <div class="dropdown">
-          <button class="dropdown-btn">
-            თანამშრომელი
-            <img class="dropdown-btn__icon" src="../src/img/down-icon.svg" alt="" />
-          </button>
-          <div class="dropdown-content">
-            <label><input type="checkbox"> ელეია</label>
-            <label><input type="checkbox"> გიორგი</label>
-            <label><input type="checkbox"> მარიამი</label>
-            <label><input type="checkbox"> ნიკა</label>
-
-            <div class="container-apply">
-              <button class="apply-btn">არჩევა</button>
-            </div>
-
-        </div>
-      </div>
       </section>
 
       <section class="task-tracker">
         <div class="to-do">
           <div class="to-do__title">
-            <p  class="task-tracker__title" >დასაწყები</p>
+            <p class="task-tracker__title">დასაწყები</p>
           </div>
 
           <!-- <div class="card">
@@ -149,42 +155,34 @@
               </div>
             </div>
           </div> -->
-
         </div>
         <div class="progress">
           <div class="progress__title">
-            <p  class="task-tracker__title" >პროგრესში</p>
-
+            <p class="task-tracker__title">პროგრესში</p>
           </div>
-          
         </div>
         <div class="ready">
           <div class="ready__title">
-            <p  class="task-tracker__title" >მზად ტესტირებისთვის</p>
-
+            <p class="task-tracker__title">მზად ტესტირებისთვის</p>
           </div>
-          
         </div>
         <div class="completed">
           <div class="completed__title">
-            <p  class="task-tracker__title" >დასრულებული</p>
-
+            <p class="task-tracker__title">დასრულებული</p>
           </div>
-
         </div>
-
       </section>
-
     </div>
-
-    
 
     <!-- Modal Structure -->
     <div class="modal-overlay">
       <div class="modal">
-
-        <button class="modal-top-btn-container   modal-btn--cancel ">
-          <img class="modal-btn--top-icon" src="../src/img/modal-exit-icon.svg" alt="" />
+        <button class="modal-top-btn-container modal-btn--cancel">
+          <img
+            class="modal-btn--top-icon"
+            src="../src/img/modal-exit-icon.svg"
+            alt=""
+          />
         </button>
 
         <p class="modal__title">თანამშრომლის დამატება</p>
@@ -194,33 +192,30 @@
             <div class="form-control">
               <label for="name">სახელი*</label>
               <input type="text" id="name" name="name" required />
-              <span class="form-control__subtext">
+              <span id="nameError-1" class="form-control__subtext">
                 <img
+                  id="nameErrorImg-1"
                   class="form-control__icon"
                   src="../src/img/check-icon.svg"
                   alt=""
                 />
                 მინიმუმ 2 სიმბოლო
               </span>
-              <span class="form-control__subtext">
+              <span id="nameError-2" class="form-control__subtext">
                 <img
+                  id="nameErrorImg-2"
                   class="form-control__icon"
                   src="../src/img/check-icon.svg"
                   alt=""
                 />
-                მაქსიმუმ 255 სიმბოლო</span
-              >
+                მაქსიმუმ 255 სიმბოლო
+              </span>
             </div>
 
             <div class="form-control">
               <label for="lastname">გვარი*</label>
-              <input
-                type="text"
-                id="surname"
-                name="lastname"
-                required
-              />
-              <span class="form-control__subtext">
+              <input type="text" id="surname" name="lastname" required />
+              <span id="surnameError-1" class="form-control__subtext">
                 <img
                   class="form-control__icon"
                   src="../src/img/check-icon.svg"
@@ -228,41 +223,53 @@
                 />
                 მინიმუმ 2 სიმბოლო
               </span>
-              <span class="form-control__subtext">
+              <span id="surnameError-2" class="form-control__subtext">
                 <img
                   class="form-control__icon"
                   src="../src/img/check-icon.svg"
                   alt=""
                 />
-                მაქსიმუმ 255 სიმბოლო</span
-              >
+                მაქსიმუმ 255 სიმბოლო
+              </span>
             </div>
           </div>
 
           <div class="form-control">
-            <label for="img-upload"> ავატარი <br>
-            <input class="form-control__avatar" type="file" id="emp-img" accept="image/*" required>
+            <label for="lastname">ავატარი*</label>
+            <input
+              class="form-control__avatar"
+              type="file"
+              id="avatarInput"
+              accept="image/*"
+              required
+            />
           </div>
 
           <div class="form-control">
             <label for="lastname">დეპარტამენტი*</label>
-                <select name="department"  required>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                </select>
+            <select name="departments" id="departments" required>
+              <option value="#" disabled selected hidden></option>
+              <!-- <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option> -->
+            </select>
           </div>
 
           <div class="modal-btn-container">
-            <button type="button" class="modal-btn modal-btn--cancel ">გაუქმება</button>
+            <button type="button" class="modal-btn modal-btn--cancel">
+              გაუქმება
+            </button>
 
-            <button class="modal-btn modal-btn--add-emp" >დაამატე თანამშრომელი</button>
-        </div>
+            <button type="button" class="modal-btn modal-btn--add-emp">
+              დაამატე თანამშრომელი
+            </button>
+          </div>
         </form>
       </div>
     </div>
     <!-- <script type="module" src="../src/js/config.js"></script> -->
-    <script src="../src/js/main.js"></script>
+    <script type="module" src="../src/js/validation.js"></script>
+    <script type="module" src="../src/js/main.js"></script>
     <script type="module" src="../src/js/taskAPI.js"></script>
   </body>
 </html>

@@ -102,4 +102,37 @@ async function fetchTasks() {
   }
 }
 
-fetchTasks();
+// fetchTasks();
+
+let j = 0;
+
+// creates dynamic dorpdown menu from api data
+export function dynamicDropDown(data, selectTag) {
+  var option = document.createElement("option");
+  option.value = data[j].id;
+  option.text = data[j].name;
+  selectTag.appendChild(option);
+  j++;
+}
+
+// fetches a list of all positions
+export async function fetchDepartment() {
+  try {
+    const responseDepartment = await fetch(`${API_URL}${"departments"}`);
+    const data = await responseDepartment.json();
+
+    console.log("started");
+    return data;
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+fetchDepartment();
+
+// // displays fetched list of all teams in dynamicly created dorpdown menu
+// const displayTeams = teams => {
+//   for (i = 0; i < teams.length ; i++) {
+//       dynamicDropDown (teams, selectTeams)
+//   }
+// }
