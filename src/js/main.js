@@ -22,7 +22,7 @@ openModalBtn.addEventListener("click", () => {
       }
     }
   }
-  initialize();
+  // initialize();
 });
 
 // Close modal on button click
@@ -34,6 +34,8 @@ openModalBtn.addEventListener("click", () => {
 for (let i = 0; i < closeModalBtn.length; i++) {
   closeModalBtn[i].addEventListener("click", function () {
     modalOverlay.style.display = "none";
+
+    document.querySelector(".employee-form").reset();
   });
 }
 

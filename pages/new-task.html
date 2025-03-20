@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://free.bboxtype.com/embedfonts/?family=FiraGO:200,300,400,500,600"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <title>Momentum</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <a href="index.html">
+          <img
+            class="nav__logo"
+            src="/src/img/logo.svg"
+            alt="header logo"
+            class="header__logo"
+          />
+        </a>
+
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <button class="nav__btn nav__btn--add-emp">
+                თანამშრომლის შექმნა
+              </button>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__btn nav__btn--add-task">
+                <img class="nav__icon" src="../src/img/add-icon.svg" alt="" />
+                შექმენი ახალი დავალება
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="form-container">
+        <form action="" class="task-form">
+          <div class="task-form__flex-container">
+            <div class="task-form-control">
+              <label for="title">სათაური*</label>
+              <input type="text" id="title" name="title" required />
+              <span id="surnameError-1" class="form-control__subtext">
+                მინიმუმ 2 სიმბოლო
+              </span>
+              <span id="surnameError-2" class="form-control__subtext">
+                მაქსიმუმ 255 სიმბოლო
+              </span>
+            </div>
+
+            <div class="task-form-control">
+              <label for="departments">დეპარტამენტი*</label>
+              <select name="departments" id="departments" required>
+                <option value="#" disabled selected hidden></option>
+                <!-- <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option> -->
+              </select>
+            </div>
+          </div>
+
+          <div class="task-form__flex-container">
+            <div class="task-form-control">
+              <label for="description">აღწერა</label>
+              <input
+                type="text"
+                id="description"
+                placeholder="Enter text here"
+              />
+              <span id="surnameError-1" class="form-control__subtext">
+                მინიმუმ 2 სიმბოლო
+              </span>
+              <span id="surnameError-2" class="form-control__subtext">
+                მაქსიმუმ 255 სიმბოლო
+              </span>
+            </div>
+
+            <div class="task-form-control">
+              <label for="employee">პასუხისმგებელი თანამშრომელი</label>
+              <select name="employee" id="employee">
+                <option value="#" disabled selected hidden></option>
+                <!-- <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option> -->
+              </select>
+            </div>
+          </div>
+
+          <div class="task-form__flex-container">
+            <div class="task-form-control">
+              <label for="priority">პრიორიტეტი*</label>
+              <select name="priority" id="priority" required>
+                <option value="#" disabled selected hidden></option>
+                <!-- <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option> -->
+              </select>
+            </div>
+            <div class="task-form-control">
+              <label for="status">სტატუსი*</label>
+              <select name="status" id="status" required>
+                <option value="#" disabled selected hidden></option>
+                <!-- <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option> -->
+              </select>
+            </div>
+            <div class="task-form-control">
+              <label for="deadline">დედლაინი</label>
+              <input type="date" id="deadline" required />
+            </div>
+          </div>
+
+          <!-- <div class="task-form"></div> -->
+          <button type="button" class="task-form-btn">დავალების შექმნა</button>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="../src/js/new-task.js"></script>
+    <script type="module" src="../src/js/main.js"></script>
+    <script type="module" src="../src/js/taskAPI.js"></script>
+  </body>
+</html>

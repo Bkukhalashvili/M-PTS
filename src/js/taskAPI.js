@@ -128,7 +128,7 @@ export async function fetchDepartment() {
   }
 }
 
-fetchDepartment();
+// fetchDepartment();
 
 // // displays fetched list of all teams in dynamicly created dorpdown menu
 // const displayTeams = teams => {
@@ -136,3 +136,34 @@ fetchDepartment();
 //       dynamicDropDown (teams, selectTeams)
 //   }
 // }
+
+// fetches any data
+export async function fetchData(resource) {
+  try {
+    const response = await fetch(`${API_URL}${resource}`, {
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    });
+    const data = await response.json();
+
+    // console.log("started");\
+    // console.log(data);
+    return data;
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+let value = 1;
+let g = 0;
+// creates dynamic dorpdown menu from api data
+export function employeeDropDown(data, selectTag) {
+  console.log(data);
+  var option = document.createElement("option");
+  option.value = value++;
+  option.text = `${data[g].name} ${data[g].surname}`;
+  selectTag.appendChild(option);
+  g++;
+  // console.log(test0);
+}
