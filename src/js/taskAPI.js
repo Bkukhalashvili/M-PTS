@@ -102,7 +102,7 @@ async function fetchTasks() {
   }
 }
 
-// fetchTasks();
+fetchTasks();
 
 let j = 0;
 
@@ -157,13 +157,37 @@ export async function fetchData(resource) {
 
 let value = 1;
 let g = 0;
+let p = 0;
 // creates dynamic dorpdown menu from api data
 export function employeeDropDown(data, selectTag) {
-  console.log(data);
   var option = document.createElement("option");
   option.value = value++;
-  option.text = `${data[g].name} ${data[g].surname}`;
+  option.text = `${data[p].name} ${data[p].surname}`;
+  selectTag.appendChild(option);
+  p++;
+  // console.log(test0);
+}
+
+export function dynPriorityDropDown(data, selectTag) {
+  // console.log(g);
+  // console.log(data);
+  var option = document.createElement("option");
+  option.value = data[g].id;
+  option.text = data[g].name;
   selectTag.appendChild(option);
   g++;
+  // console.log(test0);
+}
+
+console.log(g);
+let k = 0;
+export function dynStatusDropDown(data, selectTag) {
+  // console.log(g);
+  // console.log(data[3]);
+  var option = document.createElement("option");
+  option.value = data[k].id;
+  option.text = data[k].name;
+  selectTag.appendChild(option);
+  k++;
   // console.log(test0);
 }

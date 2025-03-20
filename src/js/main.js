@@ -22,7 +22,7 @@ openModalBtn.addEventListener("click", () => {
       }
     }
   }
-  // initialize();
+  initialize();
 });
 
 // Close modal on button click

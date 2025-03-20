@@ -46,10 +46,10 @@
             <div class="task-form-control">
               <label for="title">სათაური*</label>
               <input type="text" id="title" name="title" required />
-              <span id="surnameError-1" class="form-control__subtext">
+              <span id="titleError-1" class="form-control__subtext">
                 მინიმუმ 2 სიმბოლო
               </span>
-              <span id="surnameError-2" class="form-control__subtext">
+              <span id="titleError-2" class="form-control__subtext">
                 მაქსიმუმ 255 სიმბოლო
               </span>
             </div>
@@ -73,10 +73,10 @@
                 id="description"
                 placeholder="Enter text here"
               />
-              <span id="surnameError-1" class="form-control__subtext">
+              <span id="descriptionError-1" class="form-control__subtext">
                 მინიმუმ 2 სიმბოლო
               </span>
-              <span id="surnameError-2" class="form-control__subtext">
+              <span id="descriptionError-2" class="form-control__subtext">
                 მაქსიმუმ 255 სიმბოლო
               </span>
             </div>
@@ -123,6 +123,101 @@
       </div>
     </div>
 
+    <!-- Modal Structure -->
+    <div class="modal-overlay">
+      <div class="modal">
+        <button class="modal-top-btn-container modal-btn--cancel">
+          <img
+            class="modal-btn--top-icon"
+            src="../src/img/modal-exit-icon.svg"
+            alt=""
+          />
+        </button>
+
+        <p class="modal__title">თანამშრომლის დამატება</p>
+
+        <form action="" class="employee-form">
+          <div class="flex-container">
+            <div class="form-control">
+              <label for="name">სახელი*</label>
+              <input type="text" id="name" name="name" required />
+              <span id="nameError-1" class="form-control__subtext">
+                <img
+                  id="nameErrorImg-1"
+                  class="form-control__icon"
+                  src="../src/img/check-icon.svg"
+                  alt=""
+                />
+                მინიმუმ 2 სიმბოლო
+              </span>
+              <span id="nameError-2" class="form-control__subtext">
+                <img
+                  id="nameErrorImg-2"
+                  class="form-control__icon"
+                  src="../src/img/check-icon.svg"
+                  alt=""
+                />
+                მაქსიმუმ 255 სიმბოლო
+              </span>
+            </div>
+
+            <div class="form-control">
+              <label for="lastname">გვარი*</label>
+              <input type="text" id="surname" name="lastname" required />
+              <span id="surnameError-1" class="form-control__subtext">
+                <img
+                  class="form-control__icon"
+                  src="../src/img/check-icon.svg"
+                  alt=""
+                />
+                მინიმუმ 2 სიმბოლო
+              </span>
+              <span id="surnameError-2" class="form-control__subtext">
+                <img
+                  class="form-control__icon"
+                  src="../src/img/check-icon.svg"
+                  alt=""
+                />
+                მაქსიმუმ 255 სიმბოლო
+              </span>
+            </div>
+          </div>
+
+          <div class="form-control">
+            <label for="lastname">ავატარი*</label>
+            <input
+              class="form-control__avatar"
+              type="file"
+              id="avatarInput"
+              accept="image/*"
+              required
+            />
+          </div>
+
+          <div class="form-control">
+            <label for="lastname">დეპარტამენტი*</label>
+            <select name="departments" id="departments" required>
+              <option value="#" disabled selected hidden></option>
+              <!-- <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option> -->
+            </select>
+          </div>
+
+          <div class="modal-btn-container">
+            <button type="button" class="modal-btn modal-btn--cancel">
+              გაუქმება
+            </button>
+
+            <button type="button" class="modal-btn modal-btn--add-emp">
+              დაამატე თანამშრომელი
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="../src/js/validation.js"></script>
     <script type="module" src="../src/js/new-task.js"></script>
     <script type="module" src="../src/js/main.js"></script>
     <script type="module" src="../src/js/taskAPI.js"></script>
