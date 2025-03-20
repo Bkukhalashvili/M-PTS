@@ -40,87 +40,98 @@
         </nav>
       </header>
 
-      <div class="form-container">
+      <section class="section-new-task">
+        <p class="section-new-task__title">შექმენი ახალი დავალება</p>
+
         <form action="" class="task-form">
-          <div class="task-form__flex-container">
-            <div class="task-form-control">
-              <label for="title">სათაური*</label>
-              <input type="text" id="title" name="title" required />
-              <span id="titleError-1" class="form-control__subtext">
-                მინიმუმ 2 სიმბოლო
-              </span>
-              <span id="titleError-2" class="form-control__subtext">
-                მაქსიმუმ 255 სიმბოლო
-              </span>
-            </div>
+          <div class="form-container">
+            <div class="task-form__flex-container">
+              <div class="task-form__control">
+                <label for="title">სათაური*</label>
+                <input type="text" id="title" name="title" required />
+                <span id="titleError-1" class="task-form__control--subtext">
+                  მინიმუმ 2 სიმბოლო
+                </span>
+                <span id="titleError-2" class="task-form__control--subtext">
+                  მაქსიმუმ 255 სიმბოლო
+                </span>
+              </div>
 
-            <div class="task-form-control">
-              <label for="departments">დეპარტამენტი*</label>
-              <select name="departments" id="departments" required>
-                <option value="#" disabled selected hidden></option>
-                <!-- <option value="1">Option 1</option>
+              <div class="task-form__control">
+                <label for="departments">დეპარტამენტი*</label>
+                <select name="departments" id="departments" required>
+                  <option value="#" disabled selected hidden></option>
+                  <!-- <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option> -->
-              </select>
+                </select>
+              </div>
+            </div>
+
+            <div class="task-form__flex-container">
+              <div class="task-form__control">
+                <label for="description">აღწერა</label>
+                <textarea name="description" id="description"></textarea>
+                <span
+                  id="descriptionError-1"
+                  class="task-form__control--subtext"
+                >
+                  მინიმუმ 2 სიმბოლო
+                </span>
+                <span
+                  id="descriptionError-2"
+                  class="task-form__control--subtext"
+                >
+                  მაქსიმუმ 255 სიმბოლო
+                </span>
+              </div>
+
+              <div class="task-form__control">
+                <label for="employee">პასუხისმგებელი თანამშრომელი</label>
+                <select name="employee" id="employee">
+                  <option value="#" disabled selected hidden></option>
+                  <!-- <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option> -->
+                </select>
+              </div>
+            </div>
+
+            <div class="task-form__flex-container">
+              <div class="priority-status-flex">
+                <div class="task-form__control priority-status-container">
+                  <label for="priority">პრიორიტეტი*</label>
+                  <select name="priority" id="priority" required>
+                    <option value="#" disabled selected hidden></option>
+                    <!-- <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option> -->
+                  </select>
+                </div>
+                <div class="task-form__control priority-status-container">
+                  <label for="status">სტატუსი*</label>
+                  <select name="status" id="status" required>
+                    <option value="#" disabled selected hidden></option>
+                    <!-- <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option> -->
+                  </select>
+                </div>
+              </div>
+              <div class="task-form__control">
+                <label for="deadline">დედლაინი</label>
+                <input type="date" id="deadline" required />
+              </div>
+            </div>
+
+            <div class="task-form__btn-container">
+              <button type="button" class="task-form-btn">
+                დავალების შექმნა
+              </button>
             </div>
           </div>
-
-          <div class="task-form__flex-container">
-            <div class="task-form-control">
-              <label for="description">აღწერა</label>
-              <input
-                type="text"
-                id="description"
-                placeholder="Enter text here"
-              />
-              <span id="descriptionError-1" class="form-control__subtext">
-                მინიმუმ 2 სიმბოლო
-              </span>
-              <span id="descriptionError-2" class="form-control__subtext">
-                მაქსიმუმ 255 სიმბოლო
-              </span>
-            </div>
-
-            <div class="task-form-control">
-              <label for="employee">პასუხისმგებელი თანამშრომელი</label>
-              <select name="employee" id="employee">
-                <option value="#" disabled selected hidden></option>
-                <!-- <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option> -->
-              </select>
-            </div>
-          </div>
-
-          <div class="task-form__flex-container">
-            <div class="task-form-control">
-              <label for="priority">პრიორიტეტი*</label>
-              <select name="priority" id="priority" required>
-                <option value="#" disabled selected hidden></option>
-                <!-- <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option> -->
-              </select>
-            </div>
-            <div class="task-form-control">
-              <label for="status">სტატუსი*</label>
-              <select name="status" id="status" required>
-                <option value="#" disabled selected hidden></option>
-                <!-- <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option> -->
-              </select>
-            </div>
-            <div class="task-form-control">
-              <label for="deadline">დედლაინი</label>
-              <input type="date" id="deadline" required />
-            </div>
-          </div>
-
-          <!-- <div class="task-form"></div> -->
-          <button type="button" class="task-form-btn">დავალების შექმნა</button>
         </form>
-      </div>
+      </section>
     </div>
 
     <!-- Modal Structure -->
