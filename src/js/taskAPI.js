@@ -45,7 +45,9 @@ async function fetchTasks() {
       const statusMessage = statusMessages[status] || "Invalid status";
 
       statusMessage.innerHTML += `
-              <div class="card card__status--${item.status.id}">
+              <div class="card card__status--${item.status.id}" id = "${
+        item.id
+      }">
               <div class="card__info">
                 <div class="card__info__priority card__info__priority--${
                   item.priority.id
@@ -94,6 +96,16 @@ async function fetchTasks() {
               </div>
             </div>
         `;
+    });
+
+    const cardEl = document.querySelectorAll(".card");
+
+    cardEl.forEach((card) => {
+      card.addEventListener("click", function () {
+        const cardId = this.getAttribute("id");
+        // console.log(cardId);
+        window.location.href = `card-info.html?id=${cardId}`;
+      });
     });
 
     // console.log("Fetched Data:", data);

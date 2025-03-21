@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://free.bboxtype.com/embedfonts/?family=FiraGO:200,300,400,500,600"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <title>Momentum</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <a href="index.html">
+          <img
+            class="nav__logo"
+            src="/src/img/logo.svg"
+            alt="header logo"
+            class="header__logo"
+          />
+        </a>
+
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <button class="nav__btn nav__btn--add-emp">
+                თანამშრომლის შექმნა
+              </button>
+            </li>
+            <li class="nav__item">
+              <a href="./new-task.html" class="nav__btn nav__btn--add-task">
+                <img class="nav__icon" src="../src/img/add-icon.svg" alt="" />
+                შექმენი ახალი დავალება
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="task-info-section">
+        <div class="task-info">
+          <!-- dynamic content here  -->
+        </div>
+        <div class="comments-container">
+          <h1>comments</h1>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="../src/js/task-info.js"></script>
+  </body>
+</html>
