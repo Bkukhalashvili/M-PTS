@@ -11,11 +11,11 @@ import { dynamicDropDown } from "./taskAPI.js"; //testing
 
 // Open modal on button click and fetch & display departments data
 openModalBtn.addEventListener("click", () => {
-  modalOverlay.style.display = "flex"; // Show the modal
+  modalOverlay.style.display = "flex";
   validationForModal();
 
   async function initialize() {
-    const departmentData = await fetchDepartment(); // Wait for data to be fetched
+    const departmentData = await fetchDepartment();
     if (departmentData) {
       for (let i = 0; i < departmentData.length; i++) {
         dynamicDropDown(departmentData, departmentDropDown);
@@ -24,12 +24,6 @@ openModalBtn.addEventListener("click", () => {
   }
   initialize();
 });
-
-// Close modal on button click
-// closeModalBtn.addEventListener("click", () => {
-//   modalOverlay.style.display = "none"; // Hide the modal
-//   console.log("clicked");
-// });
 
 for (let i = 0; i < closeModalBtn.length; i++) {
   closeModalBtn[i].addEventListener("click", function () {
@@ -51,7 +45,7 @@ modalOverlay.addEventListener("click", (event) => {
 
 document.querySelectorAll(".dropdown-btn").forEach((button) => {
   button.addEventListener("click", function (e) {
-    e.stopPropagation(); // Prevents closing when clicking inside dropdown
+    e.stopPropagation();
 
     // Close all other dropdowns first
     document.querySelectorAll(".dropdown-content").forEach((content) => {
@@ -77,6 +71,6 @@ document.addEventListener("click", function () {
 // Prevent dropdown from closing when clicking inside ((
 document.querySelectorAll(".dropdown-content").forEach((content) => {
   content.addEventListener("click", function (event) {
-    event.stopPropagation(); // Prevents closing when clicking inside dropdown
+    event.stopPropagation();
   });
 });

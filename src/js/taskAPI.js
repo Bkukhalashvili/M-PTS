@@ -1,10 +1,10 @@
 import { API_URL, TOKEN } from "./config.js";
 
 async function fetchTasks() {
-  let toDoEL = document.querySelector(".to-do");
-  let progressEl = document.querySelector(".progress");
-  let readyEl = document.querySelector(".ready");
-  let completedEl = document.querySelector(".completed");
+  const toDoEL = document.querySelector(".to-do");
+  const progressEl = document.querySelector(".progress");
+  const readyEl = document.querySelector(".ready");
+  const completedEl = document.querySelector(".completed");
   console.log(`${TOKEN}`);
   try {
     const response = await fetch(`${API_URL}${"tasks"}`, {
@@ -115,7 +115,6 @@ async function fetchTasks() {
 }
 
 fetchTasks();
-
 let j = 0;
 
 // creates dynamic dorpdown menu from api data
@@ -139,15 +138,6 @@ export async function fetchDepartment() {
     console.error("Error:", error);
   }
 }
-
-// fetchDepartment();
-
-// // displays fetched list of all teams in dynamicly created dorpdown menu
-// const displayTeams = teams => {
-//   for (i = 0; i < teams.length ; i++) {
-//       dynamicDropDown (teams, selectTeams)
-//   }
-// }
 
 // fetches any data
 export async function fetchData(resource) {

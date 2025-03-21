@@ -1,25 +1,32 @@
 .task-tracker {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  padding: 0 12rem;
+  padding: 0 12rem 12rem 12rem;
   margin-top: 6rem;
-
-  // &__column {
-  //   border-radius: 1rem;
-  // }
+  &__container {
+    width: 38.1rem;
+  }
 
   &__title {
     font-size: 2rem;
-    // color: aliceblue;
     color: white;
-    font-weight: 500;
+    font-weight: $medium;
     padding: 1.5rem 0;
     text-align: center;
+    margin-bottom: 3rem;
   }
 }
 
+.cards-container {
+  display: flex;
+  gap: 3rem;
+}
+
 .to-do {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
   &__title {
     background-color: $color-status-1;
     border-radius: 1rem;
@@ -27,6 +34,10 @@
 }
 
 .progress {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
   &__title {
     background-color: $color-status-2;
     border-radius: 1rem;
@@ -34,6 +45,10 @@
 }
 
 .ready {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
   &__title {
     background-color: $color-status-3;
     border-radius: 1rem;
@@ -41,6 +56,10 @@
 }
 
 .completed {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
   &__title {
     background-color: $color-status-4;
     border-radius: 1rem;
@@ -49,13 +68,12 @@
 
 .card {
   background-color: aliceblue;
-  width: 381px;
-  height: 217;
+  width: 38.1rem;
+  height: 21.7rem;
   border: 1px solid;
   border-radius: 1.5rem;
   padding: 2rem;
-
-  margin-top: 1rem;
+  cursor: pointer;
 
   &__status--1 {
     border-color: $color-status-1;
@@ -73,22 +91,18 @@
   &__info {
     display: flex;
     align-items: center;
-    // justify-content: space-between;
     gap: 1rem;
 
     margin-bottom: 2.8rem;
 
     &__priority {
       display: flex;
-      // width: 86px;
-      gap: 4px;
+      gap: 0.4rem;
       padding: 0.4rem;
       border: 1px solid;
       border-radius: 4px;
-      font-weight: 500;
-      // color: red;
+      font-weight: $medium;
       font-size: 1.2rem;
-      // font-family: "FiraGO", sans-serif;
 
       &--1 {
         color: $color-priority-1;
@@ -104,10 +118,8 @@
     }
 
     &__department {
-      // font-weight: 500;
       font-size: 1.2rem;
-      // background-color: $color-design;
-      padding: 5px 9px;
+      padding: 0.5rem 0.9rem;
       border-radius: 1.5rem;
       color: white;
       width: auto;
@@ -143,13 +155,12 @@
   }
 
   &__description {
-    margin-bottom: 2.8rem;
+    margin-bottom: 1rem;
 
     &__title {
       font-size: 1.5rem;
-      font-weight: 500;
+      font-weight: $medium;
       color: $color-headline;
-      // background-color: red;
       margin-bottom: 1.2rem;
     }
 
@@ -164,8 +175,8 @@
     align-items: center;
     justify-content: space-between;
     &__img {
-      width: 31px;
-      height: 31px;
+      width: 3.1rem;
+      height: 3.1rem;
       border-radius: 50%;
     }
   }
@@ -173,6 +184,6 @@
   &__comments {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 0.4rem;
   }
 }

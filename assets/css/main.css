@@ -250,9 +250,11 @@ body {
 .task-tracker {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  padding: 0 12rem;
+  padding: 0 12rem 12rem 12rem;
   margin-top: 6rem;
+}
+.task-tracker__container {
+  width: 38.1rem;
 }
 .task-tracker__title {
   font-size: 2rem;
@@ -260,23 +262,49 @@ body {
   font-weight: 500;
   padding: 1.5rem 0;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
+.cards-container {
+  display: flex;
+  gap: 3rem;
+}
+
+.to-do {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 .to-do__title {
   background-color: #f7bc30;
   border-radius: 1rem;
 }
 
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 .progress__title {
   background-color: #fb5607;
   border-radius: 1rem;
 }
 
+.ready {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 .ready__title {
   background-color: #ff006e;
   border-radius: 1rem;
 }
 
+.completed {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 .completed__title {
   background-color: #3a86ff;
   border-radius: 1rem;
@@ -284,12 +312,12 @@ body {
 
 .card {
   background-color: aliceblue;
-  width: 381px;
-  height: 217;
+  width: 38.1rem;
+  height: 21.7rem;
   border: 1px solid;
   border-radius: 1.5rem;
   padding: 2rem;
-  margin-top: 1rem;
+  cursor: pointer;
 }
 .card__status--1 {
   border-color: #f7bc30;
@@ -311,7 +339,7 @@ body {
 }
 .card__info__priority {
   display: flex;
-  gap: 4px;
+  gap: 0.4rem;
   padding: 0.4rem;
   border: 1px solid;
   border-radius: 4px;
@@ -329,7 +357,7 @@ body {
 }
 .card__info__department {
   font-size: 1.2rem;
-  padding: 5px 9px;
+  padding: 0.5rem 0.9rem;
   border-radius: 1.5rem;
   color: white;
   width: auto;
@@ -361,7 +389,7 @@ body {
   font-size: 1.2rem;
 }
 .card__description {
-  margin-bottom: 2.8rem;
+  margin-bottom: 1rem;
 }
 .card__description__title {
   font-size: 1.5rem;
@@ -379,14 +407,14 @@ body {
   justify-content: space-between;
 }
 .card__employee__img {
-  width: 31px;
-  height: 31px;
+  width: 3.1rem;
+  height: 3.1rem;
   border-radius: 50%;
 }
 .card__comments {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.4rem;
 }
 
 .section-new-task {
