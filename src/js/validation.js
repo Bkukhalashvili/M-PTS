@@ -5,6 +5,7 @@ const regex = {
   numRange: /^.{2,255}$/, // 2-255 characters
 };
 
+// to give color to the images
 const green =
   "filter: invert(45%) sepia(57%) saturate(6079%) hue-rotate(100deg) brightness(102%) contrast(94%)";
 const red =
@@ -12,8 +13,7 @@ const red =
 const grey =
   "filter: invert(46%) sepia(12%) saturate(366%) hue-rotate(167deg) brightness(95%) contrast(83%)";
 
-let testing = "";
-// Create FormData object
+// Create FormData object (this gets uploaded to the server)
 const formData = new FormData();
 
 export function validationForModal() {
@@ -26,14 +26,18 @@ export function validationForModal() {
   const imageInput = document.getElementById("avatarInput");
   const dropdownInput = document.getElementById("departments");
 
+  // Helps to validate the whole form
   let isValid = true;
 
-  nameInput.addEventListener("input", function () {
+  // Name validation
+  function validateName() {
     const nameValue = nameInput.value;
+    console.log(nameValue);
 
     if (!nameValue.match(regex.GeorgianLatin)) {
       nameErrorOne.style.cssText = grey;
       nameErrorTwo.style.cssText = grey;
+
       isValid = false;
     } else if (!nameValue.match(regex.numRange)) {
       nameErrorOne.style.cssText = red;
@@ -44,9 +48,13 @@ export function validationForModal() {
       nameErrorTwo.style.cssText = green;
       formData.set("name", nameInput.value);
     }
-  });
+  }
 
-  surnameInput.addEventListener("input", function () {
+  validateName();
+  nameInput.addEventListener("input", validateName);
+
+  // Surname validation
+  function validateSurname() {
     const surnameValue = surnameInput.value;
 
     if (!surnameValue.match(regex.GeorgianLatin)) {
@@ -62,18 +70,17 @@ export function validationForModal() {
       surnameErrorTwo.style.cssText = green;
       formData.set("surname", surnameInput.value);
     }
-  });
+  }
+
+  validateSurname();
+  surnameInput.addEventListener("input", validateSurname);
 
   // Image validation
-  imageInput.addEventListener("change", function () {
+  function validateImage() {
     const file = imageInput.files[0];
 
-    // imageInput.style.border = "#ced4da";
-
     if (!file) {
-      imageInput.style.borderColor = "red";
       isValid = false;
-
       return;
     }
 
@@ -90,44 +97,34 @@ export function validationForModal() {
 
       return;
     }
-
-    // console.log("here");
     imageInput.style.borderColor = "#ced4da";
     formData.set("avatar", imageInput.files[0]);
+  }
 
-    // imageError.textContent = "";
-    // imageError.style.cssText = green;
-  });
+  validateImage();
+  imageInput.addEventListener("change", validateImage);
 
   // Dropdown validation
-  dropdownInput.addEventListener("change", function () {
+  function validateDropdown() {
     if (dropdownInput.value === "#") {
       isValid = false;
     } else {
-      // dropdownError.textContent = "";
-      // dropdownError.style.cssText = green;
       formData.set("department_id", dropdownInput.value);
     }
-  });
+  }
 
-  // Form submit handling (for example, you can prevent submit if validation fails)
-  // const form = document.getElementById('employeeForm');
-  // if (form) {
-  //   form.addEventListener('submit', function (e) {
-  //     if (nameError.textContent || lastnameError.textContent) {
-  //       e.preventDefault(); // Prevent form submission if errors exist
-  //     }
-  //   });
-  // }
+  validateDropdown();
+  imageInput.addEventListener("change", validateDropdown);
 
+  // returns the answer if all fields passed the validation
   return isValid;
 }
 
 document
   .querySelector(".modal-btn--add-emp")
-  .addEventListener("click", function (e) {
+  .addEventListener("click", function () {
+    // checks if form passed the validation and uploads the data
     if (validationForModal()) {
-      // console.log("readyy");
       const endpoint = "https://momentum.redberryinternship.ge/api/employees";
 
       fetch(endpoint, {
@@ -144,14 +141,4 @@ document
           console.error(error);
         });
     }
-
-    // for (let [key, value] of formData.entries()) {
-    //   console.log(key, value);
-    // }
   });
-
-// const formData = new FormData();
-// formData.append("name", nameInput.value);
-// formData.append("surname", surnameInput.value);
-// formData.append("department", dropdownMenu.value);
-// formData.append("avatar", imageInput.files[0]); // Upload image

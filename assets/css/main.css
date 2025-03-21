@@ -101,20 +101,6 @@ body {
   color: #212529;
 }
 
-/* Close Button */
-.close-modal-btn {
-  padding: 8px;
-  background-color: #ccc;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-}
-
-.close-modal-btn:hover {
-  background-color: #999;
-}
-
 .flex-container {
   display: flex;
   gap: 4rem;
@@ -134,8 +120,8 @@ body {
 .form-control select {
   border-radius: 6px;
   border: solid 1px #ced4da;
-  height: 42px;
-  width: 384px;
+  height: 4.2rem;
+  width: 38.4rem;
   padding: 1rem;
 }
 .form-control__icon {
@@ -149,7 +135,7 @@ body {
   color: #6c757d;
 }
 .form-control__avatar {
-  height: 120px !important;
+  height: 12rem !important;
   width: 100% !important;
   margin-bottom: 4.5rem;
   border-style: dotted !important;
@@ -187,12 +173,6 @@ body {
 
 .modal-btn--top-icon {
   width: 4rem;
-}
-
-/* errors and succes on form */
-.error-message {
-  color: red;
-  font-size: 12px;
 }
 
 .task-control {
