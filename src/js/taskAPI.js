@@ -104,7 +104,7 @@ async function fetchTasks() {
       card.addEventListener("click", function () {
         const cardId = this.getAttribute("id");
         // console.log(cardId);
-        window.location.href = `card-info.html?id=${cardId}`;
+        window.location.href = `task-info.html?id=${cardId}`;
       });
     });
 

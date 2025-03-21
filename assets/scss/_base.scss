@@ -4,7 +4,7 @@ $color-primary-deactivated: #b588f4;
 $color-headline: #212529;
 $color-subHeadline: #343a40;
 $color-subHeadline-deactivated: #adb5bd;
-$grey-shades-blackish: #0d0f10;
+$color-blackish: #0d0f10;
 
 // form
 $color-tas-details: #474747; // task details
@@ -37,6 +37,13 @@ $color-priority-3: #fa4d4d; // high status
 $color-priority-2: #ffbe0b; // medium status
 $color-priority-1: #08a508; // low status
 
+// fonts
+$light: 200;
+$book: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +64,7 @@ html {
 
 body {
   font-family: "FiraGO", sans-serif;
-  font-weight: 400;
+  font-weight: $regular;
   line-height: 1.6;
 }
 
@@ -65,5 +72,4 @@ body {
   width: 192rem;
   height: 108rem;
   margin: 0 auto;
-  // background-color: red;
 }

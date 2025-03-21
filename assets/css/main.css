@@ -499,9 +499,9 @@ body {
 }
 
 .task-info-section {
-  padding: 3rem 12rem;
   display: flex;
   justify-content: space-between;
+  padding: 3rem 12rem;
 }
 
 .task-info {
@@ -536,13 +536,12 @@ body {
 }
 .task-info__department {
   font-size: 1.2rem;
-  padding: 5px 9px;
+  padding: 0.5rem 0.9rem;
   border-radius: 1.5rem;
   color: white;
   width: -moz-fit-content;
   width: fit-content;
   text-align: center;
-  background-color: #6fa3d3;
 }
 .task-info__department--1 {
   background-color: #6fa3d3;
@@ -592,15 +591,21 @@ body {
 }
 .task-info__details .list-txt {
   display: flex;
-  list-style: none;
   gap: 0.6rem;
-  padding: 1.2rem 0;
   align-items: center;
+  padding: 1.2rem 0;
   font-size: 1.6rem;
+  list-style: none;
   color: #474747;
 }
 .task-info__details .list-txt select {
   padding: 1rem;
+  width: 25.9rem;
+  border-radius: 5px;
+  border: solid 1px #ced4da;
+  font-family: inherit;
+  font-weight: 200;
+  font-size: 1.4rem;
 }
 .task-info__details__employee {
   position: relative;
@@ -610,7 +615,7 @@ body {
   font-weight: 200;
   position: absolute;
   width: 13.5rem;
-  top: -10px; /* Distance from the top of the container */
+  top: -1rem;
 }
 .task-info__details__employee--name {
   font-size: 1.4rem;
@@ -620,4 +625,7 @@ body {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
+}
+.task-info__details--date {
+  color: #0d0f10;
 }

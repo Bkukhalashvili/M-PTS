@@ -1,7 +1,7 @@
 .task-info-section {
-  padding: 3rem 12rem;
   display: flex;
   justify-content: space-between;
+  padding: 3rem 12rem;
 }
 
 .task-info {
@@ -21,7 +21,7 @@
     padding: 0.5rem 0.4rem;
     border: 1px solid;
     border-radius: 3px;
-    font-weight: 500;
+    font-weight: $medium;
 
     &--1 {
       color: $color-priority-1;
@@ -40,14 +40,11 @@
 
   &__department {
     font-size: 1.2rem;
-    // background-color: $color-design;
-    padding: 5px 9px;
+    padding: 0.5rem 0.9rem;
     border-radius: 1.5rem;
     color: white;
-    // width: auto;
     width: fit-content;
     text-align: center;
-    background-color: $color-department-1;
 
     &--1 {
       background-color: $color-department-1;
@@ -74,7 +71,7 @@
 
   &__title {
     font-size: 3.4rem;
-    font-weight: 600;
+    font-weight: $semi-bold;
     color: $color-headline;
     padding-bottom: 1rem;
   }
@@ -87,12 +84,10 @@
   }
 
   &__details {
-    // background-color: aqua;
-
     &--title {
       font-size: 2.4rem;
       color: #2a2a2a;
-      font-weight: 500;
+      font-weight: $medium;
       margin-bottom: 1.8rem;
     }
 
@@ -103,46 +98,36 @@
     &__container {
       display: flex;
       gap: 7rem;
-      // background-color: red;
     }
-
-    // &--question {
-    //   // width: 49.3rem;
-    //   // width: max-content;
-    // }
-    // &--answer {
-    //   // width: 49.3rem;
-    //   // width: max-content;
-    // }
 
     .list-txt {
       display: flex;
-      list-style: none;
       gap: 0.6rem;
-      padding: 1.2rem 0;
       align-items: center;
+      padding: 1.2rem 0;
       font-size: 1.6rem;
-      color: #474747;
+      list-style: none;
+      color: $color-tas-details;
 
       & select {
         padding: 1rem;
+        width: 25.9rem;
+        border-radius: 5px;
+        border: solid 1px #ced4da;
+        font-family: inherit;
+        font-weight: $light;
+        font-size: 1.4rem;
       }
-
-      // height: 2.4rem;
-      // font-family: inherit;
     }
 
     &__employee {
       position: relative;
-      // background-color: red;
       &--department {
         font-size: 1.1rem;
-        font-weight: 200;
+        font-weight: $light;
         position: absolute;
         width: 13.5rem;
-        // width: 100%;
-        top: -10px; /* Distance from the top of the container */
-        // left: 50px; /* Distance from the left of the container */
+        top: -1rem;
       }
 
       &--name {
@@ -157,36 +142,8 @@
       border-radius: 50%;
     }
 
-    // &--txt {
-    //   display: flex;
-    //   list-style: none;
-    //   gap: 7rem;
-
-    //   // font-size: 1.6rem;
-    //   color: #474747;
-    //   padding: 1.2rem 0;
-    // }
-    // &--left {
-    //   display: flex;
-    //   gap: 0.6rem;
-    //   list-style: none;
-    //   gap: 0.6rem;
-
-    //   // font-size: 1.6rem;
-    //   color: #474747;
-    // }
-
-    // &--right {
-    //   display: flex;
-    //   gap: 1.2rem;
-
-    //   img {
-    //     border-radius: 50%;
-    //   }
-    // }
-
-    // &--emp {
-    //   position: relative;
-    // }
+    &--date {
+      color: $color-blackish;
+    }
   }
 }

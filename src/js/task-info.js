@@ -2,23 +2,22 @@ import { API_URL, TOKEN } from "./config.js";
 import { dynStatusDropDown, fetchData } from "./taskAPI.js";
 
 async function fetchTaskById() {
+  // retrieving task id from url.
   const urlParams = new URLSearchParams(window.location.search);
   const cardId = urlParams.get("id");
+  // getting the div where the task information will be displayed.
   const taskInfo = document.querySelector(".task-info");
-  console.log(cardId);
+
+  //  Retrieving a single task by id(id is retried from the url)
   try {
     const response = await fetch(`${API_URL}${"tasks"}/${cardId}`, {
       headers: {
         Authorization: `Bearer ${TOKEN}`,
-        "Content-Type": "application/json",
       },
     });
     const data = await response.json();
 
-    // dynamic html for cards
-
-    console.log(data);
-
+    // Changing department names into shorter versions
     const departmentNames = {
       1: "ადმინისტრაცია",
       2: "ადამიანური რესურსები",
@@ -32,10 +31,22 @@ async function fetchTaskById() {
     const departmentName =
       departmentNames[data.department.id] || "Invalid Department";
 
-    console.log(departmentName);
+    // formatting date
 
-    // loads statuses
+    let date = new Date(data.due_date);
 
+    // Weekdays
+    const weekdays = ["კვირა", "ორშ", "სამშ", "ოთხშ", "ხუთშ", "პარ", "შაბ"];
+    // Get the weekday
+    const weekday = weekdays[date.getUTCDay()];
+    // Get the day, month and year
+    const day = date.getUTCDate();
+    const month = date.getUTCMonth() + 1;
+    const year = date.getUTCFullYear();
+    // Format the date
+    date = `${weekday} - ${String(day).padStart(2, "0")}/${month}/${year}`;
+
+    // displaying server data
     taskInfo.innerHTML += `
 
     <div class="task-info__title-info">
@@ -83,7 +94,7 @@ async function fetchTaskById() {
                       src="../src/img/calendar-icon.svg"
                       alt=""
                     />
-                    <p class="task-info__priority--text">დავალების</p>
+                    <p class="task-info__priority--text">დავალების ვადა</p>
                   </li>
                 </ul>
               </div>
@@ -96,7 +107,7 @@ async function fetchTaskById() {
                   <li class="list-txt">
                     <img
                       class="task-info__details--img"
-                      src="${data.avatar}"
+                      src="${data.employee.avatar}"
                       alt=""
                     />
                     <div class="task-info__details__employee">
@@ -109,7 +120,7 @@ async function fetchTaskById() {
                     </div>
                   </li>
                   <li class="list-txt">
-                    <p class="task-info__priority--text">${data.due_date}</p>
+                    <p class="task-info__details--date">${date}</p>
                   </li>
                 </ul>
               </div>
@@ -118,33 +129,32 @@ async function fetchTaskById() {
     
     `;
 
+    // getting status dropdown element and storing default value(that we got from the server)
     const statusDropDown = document.getElementById("status");
     let dropdownDefaultValue = `${data.status.id}`;
 
+    // fetching and displaying rest of the dropdown values
     async function initialize() {
       const statusData = await fetchData("statuses"); // Wait for data to be fetched
 
       if (statusData) {
         for (let i = 0; i < statusData.length; i++) {
           dynStatusDropDown(statusData, statusDropDown);
-          statusDropDown.value = `${data.status.id}`;
+          // setting default value(that we got from the server)
+          statusDropDown.value = dropdownDefaultValue;
         }
       }
     }
     initialize();
 
-    console.log(dropdownDefaultValue);
-
+    // adding event listener on the dropdown menu
     document.getElementById("status").addEventListener("change", function () {
       dropdownDefaultValue = statusDropDown.value;
 
+      // updating fetched json file with the new value
       data.status.id = statusDropDown.value;
 
-      // console.log(JSON.stringify(data));
-
-      console.log(data.status.id);
-      console.log("here");
-
+      // uploading updated data to the server
       const endpoint = `https://momentum.redberryinternship.ge/api/tasks/${cardId}`;
 
       fetch(endpoint, {
