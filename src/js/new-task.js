@@ -13,7 +13,6 @@ const departmentsDropDown = document.getElementById("departments");
 const priorityDropDown = document.getElementById("priority");
 const statusDropDown = document.getElementById("status");
 const dateInput = document.getElementById("deadline");
-const modalOverlay = document.querySelector(".modal-overlay");
 
 const titleInput = document.getElementById("title");
 const descriptionInput = document.getElementById("description");
@@ -306,7 +305,7 @@ taskFormButton.addEventListener("click", function () {
       })
       .then((data) => {
         console.log("Upload Successful:", data);
-        modalOverlay.style.display = "none";
+        window.location.href = "../index.html"; // Redirect after successful upload
       })
       .catch(function (error) {
         console.error(error);

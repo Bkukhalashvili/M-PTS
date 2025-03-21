@@ -1,5 +1,6 @@
 import { API_URL, TOKEN } from "./config.js";
 
+const modalOverlay = document.querySelector(".modal-overlay");
 const regex = {
   GeorgianLatin: /^[ა-ჰa-zA-Z]+$/, // Georgian & Latin letters,
   numRange: /^.{2,255}$/, // 2-255 characters
@@ -139,7 +140,7 @@ document
         })
         .then((data) => {
           console.log("Upload Successful:", data);
-          modal;
+          modalOverlay.style.display = "none";
         })
         .catch(function (error) {
           console.error(error);
