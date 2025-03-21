@@ -14,15 +14,16 @@ const priorityDropDown = document.getElementById("priority");
 const statusDropDown = document.getElementById("status");
 const dateInput = document.getElementById("deadline");
 
-taskFormButton.addEventListener("click", function () {
-  // console.log("click");
-});
+const titleInput = document.getElementById("title");
+const descriptionInput = document.getElementById("description");
 
 async function initialize() {
-  const serverData = await fetchData("departments"); // Wait for data to be fetched
-  const priorityData = await fetchData("priorities"); // Wait for data to be fetched
-  const statusData = await fetchData("statuses"); // Wait for data to be fetched
+  const serverData = await fetchData("departments");
+  const priorityData = await fetchData("priorities");
+  const statusData = await fetchData("statuses");
 
+  // gets dynamic dropdown function from taskAPI
+  // and creates department, priority and status dropdown menu
   if (serverData) {
     for (let i = 0; i < serverData.length; i++) {
       dynamicDropDown(serverData, departmentsDropDown);
@@ -41,13 +42,57 @@ async function initialize() {
       statusDropDown.value = "1";
     }
   }
+  localStorage.setItem("status_id", statusDropDown.value);
+  localStorage.setItem("priority_id", priorityDropDown.value);
 }
 initialize();
 
+// function loadFormData() {
+//   if (localStorage.getItem("name")) {
+//     titleInput.value = localStorage.getItem("name");
+//   }
+//   if (localStorage.getItem("department")) {
+//     // departmentsDropDown.value = localStorage.getItem("department");
+//   }
+//   if (localStorage.getItem("description")) {
+//     descriptionInput.value = localStorage.getItem("description");
+//   }
+//   if (localStorage.getItem("employee_id")) {
+//     employeeDropDownEl.value = localStorage.getItem("employee_id");
+//   }
+//   if (localStorage.getItem("priority_id")) {
+//     priorityDropDown.value = localStorage.getItem("priority_id");
+//   }
+//   if (localStorage.getItem("status_id")) {
+//     statusDropDown.value = localStorage.getItem("status_id");
+//   }
+//   if (localStorage.getItem("due_date")) {
+//     dateInput.value = localStorage.getItem("due_date");
+//   }
+// }
+// loadFormData();
+
+// disables employee dropdown before departments isnt selected
+employeeDropDownEl.disabled = true;
+employeeDropDownEl.classList.add("disabled-select");
+
 departmentsDropDown.addEventListener("change", function () {
   let value = this.value;
+
+  // for employees dropdown
+  if (value !== "#") {
+    employeeDropDownEl.disabled = false;
+    employeeDropDownEl.classList.remove("disabled-select");
+    // employeeDropDownEl.innerHTML = `<option value="#" disabled selected hidden></option>`;
+  } else {
+    employeeDropDownEl.disabled = true;
+    employeeDropDownEl.classList.add("disabled-select");
+  }
+
   async function initialize() {
-    const serverData = await fetchData("employees"); // Wait for data to be fetched
+    // employeeDropDownEl.innerHTML = `<option value="#" disabled selected hidden></option>`;
+
+    const serverData = await fetchData("employees");
 
     console.log(serverData);
 
@@ -55,7 +100,7 @@ departmentsDropDown.addEventListener("change", function () {
       const filteredData = serverData.filter(
         (item) => item.department.id == value
       );
-
+      console.log(value);
       for (let i = 0; i < filteredData.length; i++) {
         employeeDropDown(filteredData, employeeDropDownEl);
       }
@@ -93,6 +138,31 @@ function validationNewTask() {
 
   let isValid = true;
 
+  // function validateTitle() {
+  //   const titleValue = titleInput.value;
+
+  //   if (!titleValue.match(regex.numRange)) {
+  //     titleErrorOne.style.cssText = "color: red";
+  //     titleErrorTwo.style.cssText = "color: red";
+  //     isValid = false;
+  //   } else if (titleValue == "") {
+  //     // titleErrorOne.style.cssText = "color: grey";
+  //     // titleErrorTwo.style.cssText = "color: grey";
+  //     isValid = false;
+  //   } else {
+  //     titleErrorOne.style.cssText = "color: green";
+  //     titleErrorTwo.style.cssText = "color: green";
+  //     // console.log(titleInput.value);
+  //     formData.set("name", titleInput.value);
+  //     // console.log(formData);
+  //   }
+  // }
+  // validateTitle();
+
+  // titleInput.addEventListener("change", validateTitle);
+
+  // validate title
+
   titleInput.addEventListener("input", function () {
     const titleValue = titleInput.value;
 
@@ -107,22 +177,43 @@ function validationNewTask() {
     } else {
       titleErrorOne.style.cssText = "color: green";
       titleErrorTwo.style.cssText = "color: green";
-      // console.log(titleInput.value);
       formData.set("name", titleInput.value);
-      // console.log(formData);
+      localStorage.setItem("name", titleInput.value);
     }
   });
 
-  departmentsDropDown.addEventListener("change", function () {
+  // validate department dropdown
+  function validateDepartmentsDropdown() {
     if (departmentsDropDown.value === "#") {
       isValid = false;
     } else {
       // dropdownError.textContent = "";
       // dropdownError.style.cssText = green;
       formData.set("department", departmentsDropDown.value);
+      localStorage.setItem("department", departmentsDropDown.value);
     }
-  });
+  }
+  validateDepartmentsDropdown();
+  departmentsDropDown.addEventListener("change", validateDepartmentsDropdown);
 
+  // function validateDescription() {
+  //   const descriptionValue = descriptionInput.value;
+
+  //   if (!descriptionValue.match(regex.wordRange)) {
+  //     descriptionErrorOne.style.cssText = "color: red";
+  //     descriptionErrorTwo.style.cssText = "color: red";
+  //     isValid = false;
+  //   } else {
+  //     descriptionErrorOne.style.cssText = "color: green";
+  //     descriptionErrorTwo.style.cssText = "color: green";
+
+  //     formData.set("description", descriptionInput.value);
+  //   }
+  // }
+  // validateDescription();
+  // descriptionInput.addEventListener("change", validateDescription);
+
+  // validate Description
   descriptionInput.addEventListener("input", function () {
     const descriptionValue = descriptionInput.value;
 
@@ -135,113 +226,95 @@ function validationNewTask() {
       descriptionErrorTwo.style.cssText = "color: green";
 
       formData.set("description", descriptionInput.value);
+      localStorage.setItem("description", descriptionInput.value);
     }
   });
 
-  employeeDropDownEl.addEventListener("change", function () {
+  // validate employee dropdown
+  function validateEmpDropdown() {
     if (employeeDropDownEl.value === "#") {
       isValid = false;
     } else {
-      // dropdownError.textContent = "";
-      // dropdownError.style.cssText = green;
+      console.log("success");
       formData.set("employee_id", employeeDropDownEl.value);
+      localStorage.setItem("employee_id", employeeDropDownEl.value);
     }
-  });
+  }
 
-  // priorityDropDown.addEventListener("change", function () {
-  //   if (priorityDropDown.value === "#") {
-  //     isValid = false;
-  //   } else {
-  //     // dropdownError.textContent = "";
-  //     // dropdownError.style.cssText = green;
-  //     formData.set("priority_id", priorityDropDown.value);
-  //   }
-  // });
+  validateEmpDropdown();
+  employeeDropDownEl.addEventListener("change", validateEmpDropdown);
 
+  // Validate Priority
   function validatePriority() {
     if (priorityDropDown.value === "#") {
       isValid = false;
     } else {
       formData.set("priority_id", priorityDropDown.value);
+      localStorage.setItem("priority_id", priorityDropDown.value);
     }
   }
   validatePriority();
-  priorityDropDown.addEventListener("change", validatePriority());
+  priorityDropDown.addEventListener("change", validatePriority);
 
-  // statusDropDown.addEventListener("change", function () {
-  //   if (statusDropDown.value === "#") {
-  //     isValid = false;
-  //   } else {
-  //     // dropdownError.textContent = "";
-  //     // dropdownError.style.cssText = green;
-  //     formData.set("status_id", statusDropDown.value);
-  //   }
-  // });
-
+  // Validate Status
   function validateStatus() {
+    console.log(statusDropDown.value);
+
     if (statusDropDown.value === "#") {
       isValid = false;
     } else {
       formData.set("status_id", statusDropDown.value);
+      localStorage.setItem("status_id", statusDropDown.value);
     }
   }
   validateStatus();
   statusDropDown.addEventListener("change", validateStatus);
 
-  // dateInput.addEventListener("change", function () {
-  //   if (!dateInput.value) {
-  //     isValid = false;
-  //     console.log("should be empty");
-  //   } else {
-  //     // dropdownError.textContent = "";
-  //     // dropdownError.style.cssText = green;
-  //     formData.set("due_date", dateInput.value);
-  //   }
-  // });
-
+  // Validate date
   function validateDate() {
     if (!dateInput.value) {
       isValid = false;
       console.log("should be empty");
     } else {
       formData.set("due_date", dateInput.value);
+      localStorage.setItem("due_date", dateInput.value);
     }
   }
   validateDate();
-  dateInput.addEventListener("change", validateDate());
+  dateInput.addEventListener("change", validateDate);
 
   return isValid;
 }
 
 validationNewTask();
 
-document
-  .querySelector(".task-form-btn")
-  .addEventListener("click", function (e) {
-    if (validationNewTask()) {
-      // // console.log("readyy");
-      const endpoint = "https://momentum.redberryinternship.ge/api/tasks";
+taskFormButton.addEventListener("click", function () {
+  if (validationNewTask()) {
+    // // console.log("readyy");
+    const endpoint = "https://momentum.redberryinternship.ge/api/tasks";
 
-      fetch(endpoint, {
-        method: "post",
-        body: formData,
-        headers: {
-          Authorization: `Bearer ${TOKEN}`,
-        },
+    fetch(endpoint, {
+      method: "post",
+      body: formData,
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+      },
+    })
+      .then(function (text) {
+        console.log(text);
       })
-        .then(function (text) {
-          console.log(text);
-        })
-        .then((data) => {
-          console.log("Upload Successful:", data);
-          window.location.href = "index.html"; // Redirect after successful upload
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-    }
+      .then((data) => {
+        console.log("Upload Successful:", data);
+        window.location.href = "index.html"; // Redirect after successful upload
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  } else {
+    console.log("here");
+  }
 
-    // for (let [key, value] of formData.entries()) {
-    //   console.log(key, value);
-    // }
-  });
+  // for (let [key, value] of formData.entries()) {
+  //   console.log(key, value);
+  // }
+});

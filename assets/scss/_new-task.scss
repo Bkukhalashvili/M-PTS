@@ -126,3 +126,8 @@
   //   // flex-direction: row;
   // }
 }
+
+.disabled-select {
+  pointer-events: none;
+  opacity: 0.6; /* Optional: Makes it visually appear disabled */
+}

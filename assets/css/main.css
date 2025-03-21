@@ -478,6 +478,11 @@ body {
   color: #6c757d;
 }
 
+.disabled-select {
+  pointer-events: none;
+  opacity: 0.6; /* Optional: Makes it visually appear disabled */
+}
+
 .task-info-section {
   display: flex;
   justify-content: space-between;
