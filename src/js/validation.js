@@ -137,6 +137,10 @@ document
         .then(function (text) {
           console.log(text);
         })
+        .then((data) => {
+          console.log("Upload Successful:", data);
+          modal;
+        })
         .catch(function (error) {
           console.error(error);
         });
